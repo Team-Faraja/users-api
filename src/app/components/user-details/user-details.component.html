@@ -1,0 +1,72 @@
+<div class="grid m-4">
+  <div class="md:col-8">
+    <p-button
+      label="Back"
+      icon="pi pi-arrow-left"
+      (onClick)="back()"
+    ></p-button>
+  </div>
+  <div class="md:col-8 mx-auto">
+    <div class="card">
+      <div class="col"></div>
+      <!-- Name and email -->
+      <div class="grid">
+        <div class="md:col-6 col-12 mx-auto text-center">
+          <p>
+            <i class="pi pi-heart-fill" style="font-size: 2rem"></i>
+          </p>
+          <h3>{{ user.name }}</h3>
+          <p>@ {{ user.username }}</p>
+          <p>
+            <a href="{{ 'mailto:' + user?.email }}"> {{ user.email }} </a>
+          </p>
+          <div>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-pencil"
+              type="button"
+              class="p-button-outlined p-button-success m-1"
+              (click)="edit(user.id)"
+            ></button>
+            <button
+              pButton
+              icon="pi pi-trash"
+              type="button"
+              class="p-button-outlined p-button-danger m-1"
+              (click)="delete(user.id)"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- Basic Info -->
+      <div class="grid">
+        <div class="md:col-4 col-12 m-1 m-1">
+          <p class="text-primary">
+            <small>Address</small>
+          </p>
+          <p>Street : {{ user.address.street }}</p>
+          <p>Suite : {{ user.address.suite }}</p>
+          <p>City : {{ user.address.city }}</p>
+          <p>Zipcode: {{ user.address.zipcode }}</p>
+        </div>
+        <div class="md:col-4 col-12 m-1">
+          <p class="text-primary">
+            <small>Contact Details</small>
+          </p>
+          <p>Phone : {{ user.phone }}</p>
+          <p>Website : {{ user.website }}</p>
+        </div>
+        <div class="col m-1">
+          <p class="text-primary">
+            <small>Workplace Details</small>
+          </p>
+          <p>{{ user.company.name }}</p>
+          <p>{{ user.company.catchPhrase }}</p>
+          <p>{{ user.company.bs }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

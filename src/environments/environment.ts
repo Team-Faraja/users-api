@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // server_url: 'https://django-rest-api-production.up.railway.app/',
+  server_url: 'https://jsonplaceholder.typicode.com/',
 };
 
 /*
